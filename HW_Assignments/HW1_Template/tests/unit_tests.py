@@ -28,6 +28,7 @@ def t_load():
     csv_tbl = CSVDataTable("people", connect_info, None)
 
     print("Created table = " + str(csv_tbl))
+    print(csv_tbl.get_rows()[0])
 
 
 t_load()

@@ -1,0 +1,88 @@
+/home/vlecomte/Documents/cs4111/venv/bin/python /home/vlecomte/Documents/cs4111/HW_Assignments/HW1_Template/tests/rdb_table_tests.py
+RDB table =  RDBDataTable:
+{
+  "table_name": "People",
+  "connect_info": {
+    "host": "localhost",
+    "port": 3306,
+    "user": "root",
+    "password": "dbuserdbuser",
+    "db": "lahman2019raw"
+  },
+  "key_columns": [
+    "playerID"
+  ],
+  "column_names": [
+    "playerID",
+    "birthYear",
+    "birthMonth",
+    "birthDay",
+    "birthCountry",
+    "birthState",
+    "birthCity",
+    "deathYear",
+    "deathMonth",
+    "deathDay",
+    "deathCountry",
+    "deathState",
+    "deathCity",
+    "nameFirst",
+    "nameLast",
+    "nameGiven",
+    "weight",
+    "height",
+    "bats",
+    "throws",
+    "debut",
+    "finalGame",
+    "retroID",
+    "bbrefID"
+  ]
+}
+Number of rows = 19617First 10 rows =
+    playerID birthYear birthMonth birthDay birthCountry birthState     birthCity deathYear  ... weight height bats throws       debut   finalGame   retroID    bbrefID
+0  aardsda01      1981         12       27          USA         CO        Denver            ...    215     75    R      R  2004-04-06  2015-08-23  aardd001  aardsda01
+1  aaronha01      1934          2        5          USA         AL        Mobile            ...    180     72    R      R  1954-04-13  1976-10-03  aaroh101  aaronha01
+2  aaronto01      1939          8        5          USA         AL        Mobile      1984  ...    190     75    R      R  1962-04-10  1971-09-26  aarot101  aaronto01
+3   aasedo01      1954          9        8          USA         CA        Orange            ...    190     75    R      R  1977-07-26  1990-10-03  aased001   aasedo01
+4   abadan01      1972          8       25          USA         FL    Palm Beach            ...    184     73    L      L  2001-09-10  2006-04-13  abada001   abadan01
+5   abadfe01      1985         12       17         D.R.  La Romana     La Romana            ...    220     73    L      L  2010-07-28  2017-10-01  abadf001   abadfe01
+6  abadijo01      1850         11        4          USA         PA  Philadelphia      1905  ...    192     72    R      R  1875-04-26  1875-06-10  abadj101  abadijo01
+7  abbated01      1877          4       15          USA         PA       Latrobe      1957  ...    170     71    R      R  1897-09-04  1910-09-15  abbae101  abbated01
+8  abbeybe01      1869         11       11          USA         VT         Essex      1962  ...    175     71    R      R  1892-06-14  1896-09-23  abbeb101  abbeybe01
+9  abbeych01      1866         10       14          USA         NE    Falls City      1926  ...    169     68    L      L  1893-08-16  1897-08-19  abbec101  abbeych01
+
+[10 rows x 24 columns]
+People named Williams and born in California:
+{'nameFirst': 'Bernie', 'birthCity': 'Alameda'}
+{'nameFirst': 'Don', 'birthCity': 'Los Angeles'}
+{'nameFirst': 'Jimy', 'birthCity': 'Santa Maria'}
+{'nameFirst': 'Ken', 'birthCity': 'Berkeley'}
+{'nameFirst': 'Matt', 'birthCity': 'Bishop'}
+{'nameFirst': 'Mitch', 'birthCity': 'Santa Ana'}
+{'nameFirst': 'Rinaldo', 'birthCity': 'Santa Cruz'}
+{'nameFirst': 'Rick', 'birthCity': 'Merced'}
+{'nameFirst': 'Shad', 'birthCity': 'Fresno'}
+{'nameFirst': 'Ted', 'birthCity': 'San Diego'}
+{'nameFirst': 'Trevor', 'birthCity': 'San Diego'}
+
+Finding Ted Williams by key:
+[{'nameFirst': 'Ted', 'nameLast': 'Williams'}]
+
+Deleting everyone from New York:
+Before: 82 Williams
+After: 80 Williams
+Deleting Ace Williams: :'(
+After: 79 Williams
+
+Updating Ted's first name:
+Before: [{'nameFirst': 'Ted', 'nameLast': 'Williams'}]
+After: [{'nameFirst': 'Nabuchodonosor', 'nameLast': 'Williams'}]
+After: [{'nameFirst': 'Merlin', 'nameLast': 'Williams'}]
+
+Adding Ted's little brother:
+Before: [{'nameFirst': 'Merlin', 'birthCity': 'San Diego'}, {'nameFirst': 'Trevor', 'birthCity': 'San Diego'}]
+After: [{'nameFirst': 'Merlin', 'birthCity': 'San Diego'}, {'nameFirst': 'Trevor', 'birthCity': 'San Diego'}, {'nameFirst': 'Dick', 'birthCity': 'San Diego'}]
+
+
+Process finished with exit code 0
